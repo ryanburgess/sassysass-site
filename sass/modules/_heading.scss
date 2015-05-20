@@ -1,0 +1,31 @@
+// File Name: _heading.scss
+// Description: 
+// Used by: style.scss
+// Dependencies: 
+// Date created: 19/05/2015
+// ------------------------------------------------------------ 
+
+.heading {
+  @include rem("margin-top", 80);
+  text-align: center;
+
+  h1{
+    color: $pink;
+    @include rem("font-size", 36);
+  }
+  .button-container{
+    margin-top:30px;
+  }
+  a{
+    border: 3px solid $grey;
+    text-decoration: none;
+    padding: 10px 20px;
+    color:$grey;
+    @include roundedCorners(10);
+
+    &:hover, &:focus{
+      color:$pink;
+      border: 3px solid $pink;
+    }
+  }
+}

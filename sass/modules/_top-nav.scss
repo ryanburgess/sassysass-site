@@ -1,0 +1,26 @@
+// File Name: _top-nav.scss
+// Description: 
+// Used by: style.scss
+// Dependencies: 
+// Date created: 19/05/2015
+// ------------------------------------------------------------ 
+
+.top-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $grey;
+  color: white;
+  @include rem("padding", 10, 0);
+  width: 100%;
+
+  a{
+    @extend %right;
+    color: white;
+    text-decoration: none;
+
+    &:hover, &:focus{
+      color: darken($grey, 30%);
+    }
+  }
+}
