@@ -30,6 +30,69 @@
             <div class="button-container"><a href="https://github.com/ryanburgess/sassysass">Github</a></div>
           </div>
         </div>
+        <div class="main-content">
+          <div class="row">
+            <div class="doc-block">
+              <h2>Install</h2>
+              <span class="code">npm install sassysass -g</span>
+            </div>
+            <div class="doc-block">
+              <h2>Use</h2>
+              <p>Run <span class="code">sassysass</span> in your project directory.</p>
+              <p>To create new individual Sass files run <span class="code">sassysass-page name=[filename] path=[path to Sass directory]</span>. If the name isn't set the file will be named 'page' and if the path isn't set it assumes the directory is 'sass'.</p>
+              <p>To create new Sass module run <span class="code">sassysass-module name=[filename] path=[path to modules directory]</span>. If the name isn't set the file will be named 'module' and if the path isn't set it assumes the directory is 'sass/modules'.</p>
+            </div>
+            <div class="doc-block">
+              <h2>SassySass Architecture</h2>
+              <ol>
+                <li>Utils</li>
+                <ul>
+                  <li>The utils directory contains Sass partials like:</li>
+                  <ul>
+                    <li>* Vendor dependancies (Compass, Foundation)</li>
+                    <li>* Authored dependancies (Mixins, Extends)</li>
+                  </ul>
+                </ul>
+                <li>Base</li>
+                <ul>
+                  <li>The base directory contains Sass partials like:</li>
+                  <ul>
+                    <li>* Variables</li>
+                    <li>* Fonts</li>
+                    <li>* Reset</li>
+                  </ul>
+                </ul>
+                <li>Layout</li>
+                <ul>
+                  <li>The layout directory contains Sass partials like:</li>
+                  <ul>
+                    <li>* Responsive Grid</li>
+                    <li>* Page specific layouts</li>
+                  </ul>
+                </ul>
+                <li>Modules</li>
+                <ul>
+                  <li>The modules directory contains Sass partials like:</li>
+                  <ul>
+                    <li>* Header</li>
+                    <li>* Footer</li>
+                    <li>* Navigation</li>
+                    <li>* Content Block</li>
+                  </ul>
+                </ul>
+                <li>Themes</li>
+                <ul>
+                  <li>The themes directory contains Sass partials that overwrite the styles in layout or modules.</li>
+                </ul>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <div class="row">
+            MIT &copy; <a href="https://twitter.com/burgessdryan">Ryan Burgess</a>
+          </div>
+        </footer>
       </div>
     </body>
 </html>

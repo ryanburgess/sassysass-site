@@ -1,0 +1,16 @@
+// File Name: _doc-block.scss
+// Description: 
+// Used by: style.scss
+// Dependencies: 
+// Date created: 20/05/2015
+// ------------------------------------------------------------ 
+
+.doc-block{
+  margin-bottom: 40px;
+  @include rem("max-width", $sassyMed);
+
+  p{
+    margin-bottom: 15px;
+    line-height: 25px;
+  }
+}

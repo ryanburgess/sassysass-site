@@ -15,12 +15,17 @@
 // ----------------------------------------------------------------------
 @import "layout/grid";
 @import "layout/container";
+@import "layout/main-content";
 
 // ----------------------------------------------------------------------
   // Modules
 // ----------------------------------------------------------------------
 @import "modules/top-nav";
 @import "modules/heading";
+@import "modules/code";
+@import "modules/num-list";
+@import "modules/doc-block";
+@import "modules/footer";
 
 
 // ----------------------------------------------------------------------

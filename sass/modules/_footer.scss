@@ -1,0 +1,22 @@
+// File Name: _footer.scss
+// Description: 
+// Used by: style.scss
+// Dependencies: 
+// Date created: 19/05/2015
+// ------------------------------------------------------------ 
+
+footer{
+  background: $grey;
+  position: absolute;
+  @include rem("padding", 25, 0);
+  bottom:-90px;
+  left:0;
+  width:100%;
+  text-align: right;
+  color:white;
+
+  a{
+    color:white;
+    text-decoration: none;
+  }
+}
