@@ -9,6 +9,14 @@
   @include rem("margin-top", 80);
   text-align: center;
 
+  .row{
+    max-width:700px;
+  }
+
+  p{
+    @include rem("font-size", 18);
+  }
+
   h1{
     color: $pink;
     @include rem("font-size", 36);
