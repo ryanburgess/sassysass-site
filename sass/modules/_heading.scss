@@ -6,34 +6,26 @@
 // ------------------------------------------------------------ 
 
 .heading {
-  @include rem("margin-top", 80);
+  @include rem("padding", 80, 0, 0, 0);
   text-align: center;
 
   .row{
     max-width:700px;
   }
 
+  h1{
+    color: $pink;
+    @include rem("font-size", 50);
+  }
+
   p{
     @include rem("font-size", 18);
   }
 
-  h1{
-    color: $pink;
-    @include rem("font-size", 36);
-  }
-  .button-container{
-    margin-top:30px;
-  }
-  a{
-    border: 3px solid $grey;
-    text-decoration: none;
-    padding: 10px 20px;
-    color:$grey;
-    @include roundedCorners(10);
-
-    &:hover, &:focus{
-      color:$pink;
-      border: 3px solid $pink;
-    }
+  .github-button {
+    text-align: center;
+    @extend %marginAuto;
+    @include rem("width", 120);
+    @include rem("margin-top", 25);
   }
 }
