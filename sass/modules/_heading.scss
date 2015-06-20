@@ -6,16 +6,20 @@
 // ------------------------------------------------------------ 
 
 .heading {
-  @include rem("padding", 80, 0, 0, 0);
-  text-align: center;
+  @include rem("padding", 30, 0);
+  background: $lightPurple;
 
   .row{
-    max-width:700px;
+    max-width:900px;
   }
 
   h1{
-    color: $pink;
+    color: $darkPurple;
     @include rem("font-size", 50);
+  }
+
+  h2{
+    @include rem("font-size", 28);
   }
 
   p{
@@ -23,8 +27,6 @@
   }
 
   .github-button {
-    text-align: center;
-    @extend %marginAuto;
     @include rem("width", 120);
     @include rem("margin-top", 25);
   }

@@ -6,8 +6,14 @@
 // ------------------------------------------------------------ 
 
 .doc-block{
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   @include rem("max-width", $sassyMed);
+
+  h2{
+    color: $darkPurple;
+    @include rem("font-size", 30);
+    margin-bottom: 20px;
+  }
 
   p{
     margin-bottom: 15px;
