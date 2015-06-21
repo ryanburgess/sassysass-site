@@ -7,7 +7,7 @@
 
 .heading {
   @include rem("padding", 30, 0);
-  background: $lightPurple;
+  background: $grey;
 
   .row{
     max-width:900px;
