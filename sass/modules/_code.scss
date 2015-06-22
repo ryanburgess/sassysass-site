@@ -6,11 +6,13 @@
 // ------------------------------------------------------------ 
 
 .code{
+  font-family: $code;
   background: $lightGrey;
   padding: 5px 8px;
 }
 
 .code-block{
+  font-family: $code;
   @include rem("font-size", 20);
   display:block;
   width:100%;
