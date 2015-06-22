@@ -9,7 +9,23 @@ var gulp        = require('gulp'),
   jshintStyle   = require('jshint-stylish'),
   replace       = require('gulp-replace'),
   notify        = require('gulp-notify'),
+  beep          = require('beepbeep'),
+  colors        = require('colors'),
+  plumber       = require('gulp-plumber'),
   path          = require('path');
+
+// error handling convenience wrapper
+gulp.plumbedSrc = function(){
+  return gulp.src.apply(gulp, arguments)
+    .pipe(plumber({
+      errorHandler: function(err) {
+        beep();
+        console.log('[ERROR:]'.bold.red);
+        console.log(err.messageFormatted);
+        this.emit('end');
+      }
+    }));
+};
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -23,7 +39,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('html', function(){
-  gulp.src(path.join(__dirname, 'views/**/*.html'))
+  gulp.plumbedSrc(path.join(__dirname, 'views/**/*.html'))
     .pipe(gulp.dest(path.join(__dirname, 'build')))
     .pipe(browserSync.reload({
       stream: true
@@ -31,7 +47,7 @@ gulp.task('html', function(){
 });
 
 gulp.task('sass', function () {
-  return gulp.src('sass/**/*.scss')
+  return gulp.plumbedSrc('sass/**/*.scss')
     .pipe(sass())
     .pipe(minifyCSS())
     .pipe(gulp.dest('./build/css/'))
@@ -39,7 +55,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('jshint', function() {
-  return gulp.src('./js/**/*.js')
+  return gulp.plumbedSrc('./js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter(jshintStyle))
     .pipe(jshint.reporter('fail'))
@@ -47,7 +63,7 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('scripts', function() {
-  gulp.src('js/project.js')
+  gulp.plumbedSrc('js/project.js')
     .pipe(browserify({
       insertGlobals : true,
       debug : !gulp.env.production
