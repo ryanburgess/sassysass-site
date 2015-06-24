@@ -1,7 +1,6 @@
 var gulp        = require('gulp'),
   minifyCSS     = require('gulp-minify-css'),
   sass          = require('gulp-sass'),
-  browserify    = require('gulp-browserify'),
   browserSync   = require('browser-sync'),
   uglify        = require('gulp-uglify'),
   rename        = require('gulp-rename'),
@@ -26,25 +25,6 @@ gulp.plumbedSrc = function(){
       }
     }));
 };
-
-gulp.task('browser-sync', function() {
-  browserSync({
-    server: {
-      baseDir: path.join(__dirname, 'build')
-    },
-    host: 'localhost',
-    port: 8000,
-    open: false
-  });
-});
-
-gulp.task('html', function(){
-  gulp.plumbedSrc(path.join(__dirname, 'views/**/*.html'))
-    .pipe(gulp.dest(path.join(__dirname, 'build')))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
-});
 
 gulp.task('sass', function () {
   return gulp.plumbedSrc('sass/**/*.scss')
@@ -78,10 +58,11 @@ gulp.task('scripts', function() {
     .pipe(notify({ message: 'JS files complete' }));
 });
 
-gulp.task('watch', ['browser-sync'], function() {
+gulp.task('watch', function() {
   gulp.watch('sass/**/*.scss', ['sass']);
   gulp.watch('js/**/*.js', ['jshint', 'scripts']);
   gulp.watch('views/**/*.html', ['html']);
 });
 
+gulp.task('test', ['jshint']);
 gulp.task('default', ['watch']);

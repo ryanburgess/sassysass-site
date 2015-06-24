@@ -7,7 +7,6 @@
     "gulp": "^3.8.11"
   },
   "devDependencies": {
-    "browser-sync": "^2.7.1",
     "gulp": "^3.8.11",
     "gulp-browserify": "^0.5.1",
     "gulp-jshint": "^1.10.0",
@@ -24,7 +23,7 @@
     "colors": "~1.1.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
