@@ -1,0 +1,28 @@
+// File Name: _contributors.scss
+// Description: List contributor names, profile images and twitter handles 
+// Used by: style.scss, 
+// Dependencies: 
+// Date created: 08/07/2015
+// ------------------------------------------------------------
+
+.contributors{
+  li{
+    display:inline-block;
+    width: 30%;
+    text-align: center;
+
+    @include breakpoint(640){
+      width:100%;
+      margin-bottom: 30px;
+    }
+
+    img{
+      @include roundedCorners(150);
+    }
+
+    a{
+      color: $darkPurple;
+      text-decoration: none;
+    }
+  }
+}
