@@ -4,7 +4,11 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp": "^3.8.11"
+    "express": "^4.13.1",
+    "express-react-views": "^0.8.1",
+    "gulp": "^3.8.11",
+    "react": "^0.13.3",
+    "year": "^0.2.1"
   },
   "devDependencies": {
     "beepbeep": "~1.2.0",

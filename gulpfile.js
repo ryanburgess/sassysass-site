@@ -30,7 +30,7 @@ gulp.task('sass', function () {
   return gulp.plumbedSrc('sass/**/*.scss')
     .pipe(sass())
     .pipe(minifyCSS())
-    .pipe(gulp.dest('./build/css/'))
+    .pipe(gulp.dest('./public/css/'))
     .pipe(notify({ message: 'CSS complete' }));
 });
 
@@ -48,7 +48,7 @@ gulp.task('scripts', function() {
       insertGlobals : true,
       debug : !gulp.env.production
     }))
-    .pipe(gulp.dest('./build/js/'))
+    .pipe(gulp.dest('./public/js/'))
     .pipe(uglify())
     .pipe(rename({
 	     extname: '.min.js'
