@@ -1,5 +1,5 @@
-exports.index = function(req, res){
-  res.render('index', { 
+exports.index = function(req, res) {
+  res.render('index', {
     title: 'Sassy Sass',
     description: 'Sassy Sass is a scaffolding tool to help you organize your project’s Sass structure.',
     tagline: 'A scaffolding tool to help you organize your project’s Sass structure.',

@@ -1,11 +1,12 @@
 var express = require('express');
 var reactViews = require('express-react-views');
+var path = require('path');
 
 var app = express();
 
 app.set('view engine', 'js');
 app.engine('js', reactViews.createEngine());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.resolve(__dirname + '/public')));
 
 app.get('/', require('./routes').index);
 
